@@ -11,6 +11,9 @@ swagger = Swagger(app, template=template)
 @app.route("/tpa", methods=['POST'])
 @swag_submit_tpa
 def tpa():
+    '''
+    API endpoint to submit TPA calculation requests for validated data
+    '''
     contents = request.get_json()
     contents = {k.lower(): v for k,v in data.items()}
     try:
