@@ -1,0 +1,12 @@
+[Unit]
+Description=Run TPA
+After=network.target
+
+[Service]
+WorkingDirectory=/home/aerotract/software/TPA/TPAService
+User=aerotract
+Restart=always
+ExecStart=/usr/bin/python3 /home/aerotract/software/TPA/TPAService/api.py
+
+[Install]
+WantedBy=multi-user.target
