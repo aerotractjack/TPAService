@@ -12,11 +12,21 @@ template = {
 swag_submit_tpa = swag_from({
     'responses': {
         200: {
-            'description': 'Succesfully submitted operation',
-            'schema': {
-                'type': 'string',
-            }
-        },
+                "description": "Successfully submitted operation",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "tpa_rd_plot": {
+                            "type": "string",
+                            "description": "Path to the TPA RD plot"
+                        },
+                        "tpa_report": {
+                            "type": "string",
+                            "description": "Path to the TPA report"
+                        }
+                    }
+                }
+            },
         500: {
             'description': 'Failed to submit operation',
             'schema': {
