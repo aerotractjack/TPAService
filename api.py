@@ -22,7 +22,6 @@ def tpa():
     contents = request.get_json()
     contents = {k.lower(): v for k,v in contents.items()}
     try:
-        # TPAReport(**contents)
         executor.submit(TPAReport, **contents)
         paths = integration.get_tpa_paths(
             contents['client_id'], contents['project_id'], contents['stand_id']
